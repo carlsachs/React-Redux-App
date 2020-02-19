@@ -1,5 +1,4 @@
 import { FETCH_DATA, UPDATE_ITEMS, IS_ERROR  } from "../actions/actions";
-import { bindActionCreators } from "redux";
 
 const initialState = {
     prices: [],

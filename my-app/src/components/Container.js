@@ -2,6 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import {getData} from "../actions/actions.js";
 
+// import List from "./List.js";
+
 const Container = props => {
 
     const handleGetData = e => {
@@ -22,4 +24,4 @@ const mapStateToProps = state => {
 export default connect(
     mapStateToProps,
     { getData }
-)(Container)
+)(Container);
