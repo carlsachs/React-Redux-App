@@ -13,6 +13,13 @@ const Container = props => {
         <button onClick={handleGetData}>Get Current Pricing</button>
         </div>
     )
-
-
 }
+const mapStateToProps = state => {
+    return {
+        isFetchingData: state.isFetchingData
+    };
+};
+export default connect(
+    mapStateToProps,
+    { getData }
+)(Container)
