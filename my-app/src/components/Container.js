@@ -1,6 +1,13 @@
 import React from "react";
+import styled from "styled-components";
 
 import Card from "./Card.js";
+
+const Boxes = styled.div`
+    display: flex;
+    flex-flow: row wrap;
+`;
+
 
 const Container = props => {
 
@@ -9,13 +16,13 @@ const Container = props => {
         <div>
             <button onClick={props.handleGetData}>Get Current Pricing</button>
             {props.prices.length ? (
-                <div>
+                <Boxes>
                    {props.prices.map(price => (
                       <Card price={price} />
                    ))}
-                </div>
+                </Boxes>
              ) : (
-                <p>No Items Yet, Press The button</p>
+                <p>Ready for a Heartbreak??</p>
              )
           }
         </div>

@@ -1,7 +1,7 @@
 import { FETCH_DATA, UPDATE_ITEMS, IS_ERROR  } from "../actions/actions";
 
 const initialState = {
-    prices: [{name: "carl", symbol: "XRP"}],
+    prices: [],
     isFetchingData: false,
     error: ""
   };
