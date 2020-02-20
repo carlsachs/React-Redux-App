@@ -1,7 +1,7 @@
 import { FETCH_DATA, UPDATE_ITEMS, IS_ERROR  } from "../actions/actions";
 
 const initialState = {
-    prices: [],
+    prices: [{name: "carl", symbol: "XRP"}],
     isFetchingData: false,
     error: ""
   };
@@ -13,7 +13,7 @@ export const Reducer = (state = initialState, action) => {
               ...state,
               isFetchingData: true,
               prices: []
-          };
+            };
         case UPDATE_ITEMS:
             return {
                 ...state,

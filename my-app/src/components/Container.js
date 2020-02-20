@@ -1,27 +1,31 @@
 import React from "react";
-import { connect } from "react-redux";
-import {getData} from "../actions/actions.js";
 
-// import List from "./List.js";
+import Card from "./Card.js";
 
 const Container = props => {
 
-    const handleGetData = e => {
-        e.preventDefault();
-        props.getData();
-    };
+    console.log("container", props)
     return (
         <div>
-        <button onClick={handleGetData}>Get Current Pricing</button>
+            <button onClick={props.handleGetData}>Get Current Pricing</button>
+            {props.prices.length ? (
+                <div>
+                   {props.prices.map(price => (
+                      <Card price={price} />
+                   ))}
+                </div>
+             ) : (
+                <p>No Items Yet, Press The button</p>
+             )
+          }
         </div>
     )
 }
-const mapStateToProps = state => {
-    return {
-        isFetchingData: state.isFetchingData
-    };
-};
-export default connect(
-    mapStateToProps,
-    { getData }
-)(Container);
+
+export default Container;
+
+// {props.prices.data.map(price => {
+//     return (
+//         <Card price={price}/>
+//     )
+// })}

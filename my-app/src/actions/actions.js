@@ -6,10 +6,10 @@ export const IS_ERROR = "SET_ERROR";
 
 export const getData = () => dispatch => {
     dispatch({ type: FETCH_DATA });
-    axios.get("https://coingecko.com/api/documentations/v3")
+    axios.get("https://api.coinlore.net/api/tickers/")
     .then(res => {
-        console.log(res);
-        dispatch({ type: UPDATE_ITEMS, payload: res.data });
+        console.log(res.data.data);
+        dispatch({ type: UPDATE_ITEMS, payload: res.data.data });
     })
     .catch(err => {
         console.log("error fetching API from coingecko", err);
