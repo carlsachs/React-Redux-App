@@ -12,7 +12,6 @@ export const Reducer = (state = initialState, action) => {
           return {
               ...state,
               isFetchingData: true,
-              prices: []
             };
         case UPDATE_ITEMS:
             return {

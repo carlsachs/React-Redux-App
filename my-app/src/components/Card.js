@@ -25,8 +25,8 @@ const Box = styled.div`
 `;
 
 
-const Card = props => {
-    const {price} = props;
+const Card = ({price}) => {
+    // const {price} = props;
     const {name, symbol, rank, price_usd, percent_change_24h, percent_change_1h, percent_change_7d, market_cap_usd} = price;
     return (
         <Box>
